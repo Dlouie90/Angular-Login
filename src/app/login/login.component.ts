@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
 
 export class LoginComponent implements OnInit {
   members: Member[];
-  username = '';
+  email = '';
   password = '';
 
   constructor(private memberService: MemberService, private router: Router) {
@@ -27,12 +27,10 @@ export class LoginComponent implements OnInit {
 
   onLogin(): void {
     for (const m of this.members) {
-      if (m.username.toLowerCase() === this.username.toLowerCase() && m.password === this.password) {
-        // console.log('login success');
+      if (m.email.toLowerCase() === this.email.toLowerCase() && m.password === this.password) {
+        console.log('login success');
         this.router.navigate(['./home', m.id]);
       }
     }
-    // console.log(this.username);
-    // console.log(this.password);
   }
 }
