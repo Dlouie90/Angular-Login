@@ -1,5 +1,5 @@
-import {Member} from './member';
-import {MEMBERS} from './mock-members';
+import {Member} from '../_models/member';
+import {MEMBERS} from '../mock-members';
 import {Injectable} from '@angular/core';
 
 @Injectable()

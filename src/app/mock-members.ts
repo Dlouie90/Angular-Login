@@ -1,4 +1,4 @@
-import {Member} from './member';
+import {Member} from './_models/member';
 
 export const MEMBERS: Member[] = [
   {id: 33, email: 'bobbyhill@gmail.com', password: '1234', desc: 'Hello World!'},
