@@ -1,3 +1,8 @@
 .jumbotron {
-  background-image: url("../assets/binary_code.jpg")
+  background-image: url("../assets/binary_spiral.jpg");
+}
+
+#title {
+  text-align: center;
+  color: white;
 }
