@@ -30,11 +30,11 @@ export class LoginComponent implements OnInit {
 
   onLogin(): void {
     this.alertService.clear();
-    if (this.email === '' || undefined || null) {
+    if (this.email === '' || this.email === undefined || this.email === null) {
       this.alertService.error('Please enter your email address.');
       return;
     }
-    if (this.password === '' || undefined || null) {
+    if (this.password === '' || this.password === undefined || this.password === null) {
       this.alertService.error('Please enter your password.');
       return;
     }
@@ -43,5 +43,6 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['./home', m.id]);
       }
     }
+    this.alertService.error('Email or Password is incorrect.');
   }
 }
