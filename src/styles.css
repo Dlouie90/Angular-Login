@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-html {
+/* Bootstrap 4: HTML, CSS, and JS framework */
+@import url(assets/css/bootstrap.css);
+
+html, body {
   background-image: url("/assets/binary_spiral.jpg");
 }

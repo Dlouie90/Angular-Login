@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
     for (const m of this.members) {
       if (m.email.toLowerCase() === this.email.toLowerCase() && m.password === this.password) {
         this.router.navigate(['./home', m.id]);
+        return;
       }
     }
     this.alertService.error('Email or Password is incorrect.');
