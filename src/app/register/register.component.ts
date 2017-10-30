@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
-import {MemberService} from '../_services/member.service';
-import {Member} from '../_models/member';
 import {AlertService} from '../_services/alert.service';
 import {isUndefined} from 'util';
+import {UserService} from '../_services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -12,13 +11,12 @@ import {isUndefined} from 'util';
 
 export class RegisterComponent {
   counter = 36;
-  member: Member;
   email: string;
   password1: string;
   password2: string;
   desc: string;
 
-  constructor(private memberService: MemberService,
+  constructor(private userService: UserService,
               private alertService: AlertService) {
   }
 
@@ -44,8 +42,6 @@ export class RegisterComponent {
       this.alertService.error('Please enter a description.');
       return;
     }
-    this.member = new Member(++this.counter, this.email, this.password1, this.desc);
-    this.memberService.addMember(this.member);
     this.alertService.success('Registration was successful. Please Login.');
     // console.log(this.memberService.getMembers());
   }

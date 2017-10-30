@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Member} from '../_models/member';
 import {ActivatedRoute, ParamMap} from '@angular/router';
-import {MemberService} from '../_services/member.service';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -11,15 +9,10 @@ import 'rxjs/add/operator/switchMap';
 })
 
 export class HomeComponent implements OnInit {
-  member: Member;
 
-  constructor(private memberService: MemberService,
-              private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    this.route.paramMap
-      .switchMap((params: ParamMap) => this.memberService.getMember(+params.get('id')))
-      .subscribe(member => this.member = member);
   }
 }

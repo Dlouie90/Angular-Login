@@ -4,12 +4,13 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {LoginComponent} from './login/login.component';
-import {MemberService} from './_services/member.service';
 import {HomeComponent} from './home/home.component';
 import {AppRoutingModule} from './app-routing.module';
 import {RegisterComponent} from './register/register.component';
 import {AlertComponent} from './alert/alert.component';
 import {AlertService} from './_services/alert.service';
+import {AdminComponent} from './admin/admin.component';
+import {UserService} from './_services/user.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {AlertService} from './_services/alert.service';
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    AlertComponent
+    AlertComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,7 @@ import {AlertService} from './_services/alert.service';
     AppRoutingModule
   ],
   providers: [
-    MemberService,
+    UserService,
     AlertService
   ],
   bootstrap: [AppComponent]

@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Member} from '../_models/member';
-import {MemberService} from '../_services/member.service';
 import {Router} from '@angular/router';
 import {AlertService} from '../_services/alert.service';
 
@@ -11,21 +9,14 @@ import {AlertService} from '../_services/alert.service';
 })
 
 export class LoginComponent implements OnInit {
-  members: Member[];
   email = '';
   password = '';
 
-  constructor(private memberService: MemberService,
-              private router: Router,
+  constructor(private router: Router,
               private alertService: AlertService) {
   }
 
-  getMembers(): void {
-    this.memberService.getMembers().then(members => this.members = members);
-  }
-
   ngOnInit(): void {
-    this.getMembers();
   }
 
   onLogin(): void {
@@ -37,12 +28,6 @@ export class LoginComponent implements OnInit {
     if (this.password === '' || this.password === undefined || this.password === null) {
       this.alertService.error('Please enter your password.');
       return;
-    }
-    for (const m of this.members) {
-      if (m.email.toLowerCase() === this.email.toLowerCase() && m.password === this.password) {
-        this.router.navigate(['./home', m.id]);
-        return;
-      }
     }
     this.alertService.error('Email or Password is incorrect.');
   }
