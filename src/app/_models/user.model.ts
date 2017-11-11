@@ -4,7 +4,6 @@ export class User {
   lastName: string;
   email: string;
   password: string;
-  description: string;
 
   constructor(properties?: any) {
     if (!properties) {
@@ -16,6 +15,5 @@ export class User {
     this.lastName = properties.lastName;
     this.email = properties.email;
     this.password = properties.password;
-    this.description = properties.description;
   }
 }
