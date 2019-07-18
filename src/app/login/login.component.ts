@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {AlertService} from '../_services/alert.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   password = '';
 
   constructor(private router: Router,
-              private alertService: AlertService) {
+    private alertService: AlertService) {
   }
 
   ngOnInit(): void {

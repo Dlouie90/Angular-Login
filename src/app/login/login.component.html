@@ -1,19 +1,17 @@
 <div class="col-md-6 offset-md-3">
-  <div class="panel panel-default">
-    <h2>Sign in</h2>
-    <form name="form">
-      <div class="form-group">
-        <label>Email</label>
-        <input [(ngModel)]="email" type="text" class="form-control" name="email"/>
-      </div>
-      <div class="form-group">
-        <label>Password</label>
-        <input [(ngModel)]="password" type="password" class="form-control" name="password"/>
-      </div>
-      <div class="form-group">
-        <button (click)="onLogin()" class="btn btn-primary">Login</button>
-        <a [routerLink]="['/register']" class="btn btn-link">Need An Account?</a>
-      </div>
-    </form>
-  </div>
+    <div class="panel panel-default">
+        <h2>Sign in</h2>
+        <form name="form">
+            <div class="form-group">
+                <input [(ngModel)]="email" type="text" class="form-control" name="email" placeholder="Email/Username" />
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="password" type="password" class="form-control" name="password"
+                    placeholder="Password" />
+            </div>
+            <div class="form-group">
+                <button (click)="onLogin()" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+    </div>
 </div>
