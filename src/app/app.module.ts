@@ -11,6 +11,8 @@ import { UserService } from './services/user.service';
 import { AlertService } from './services/alert.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { APP_BASE_HREF } from '@angular/common';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,15 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [UserService, AlertService],
+  providers: [UserService, AlertService, { provide: APP_BASE_HREF, useValue: "/" }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item hover-enlarge" *ngFor="let path of paths">
+                <a class="nav-link" id="links" [routerLink]="path.url" routerLinkActive="active bigger"
+                    [routerLinkActiveOptions]="{exact:true}">
+                    {{path.title}}
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
