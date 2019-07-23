@@ -10,21 +10,23 @@ import * as anime from 'animejs';
 })
 
 export class LoginComponent implements OnInit {
-  email: string = '';
+  username: string = '';
+  usernameCheck: boolean = false;
   password: string = '';
-  emailAnimation: any;
+  passwordCheck: boolean = false;
+  usernameAnimation: any;
+  credCheck: boolean = false;
   pwAnimation: any;
   submitAnimation: any;
 
-  constructor(private router: Router,
-    private alertService: AlertService) {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
   }
 
-  onEmail(): void {
-    this.emailAnimation = anime({
+  onUsername(): void {
+    this.usernameAnimation = anime({
       targets: 'path',
       strokeDashoffset: {
         value: 0,
@@ -69,16 +71,17 @@ export class LoginComponent implements OnInit {
         easing: 'easeOutQuart'
       }
     });
-
-    this.alertService.clear();
-    if (this.email === '' || this.email === undefined || this.email === null) {
-      this.alertService.error('Please enter your email address.');
+    this.usernameCheck = false;
+    this.passwordCheck = false;
+    this.credCheck = false;
+    if (this.username === '' || this.username === undefined || this.username === null) {
+      this.usernameCheck = true;
       return;
     }
     if (this.password === '' || this.password === undefined || this.password === null) {
-      this.alertService.error('Please enter your password.');
+      this.passwordCheck = true;
       return;
     }
-    this.alertService.error('Email or Password is incorrect.');
+    this.credCheck = true;
   }
 }

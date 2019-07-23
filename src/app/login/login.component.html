@@ -21,11 +21,32 @@
                         20,25 h 168.57143" />
             </svg>
             <div class="form">
-                <label for="email">Email/Username</label>
-                <input (click)="onEmail()" [(ngModel)]="email" type="text" name="email">
+                <label for="username">Username</label>
+                <input (click)="onUsername()" [(ngModel)]="username" type="text" id="username"
+                    [ngStyle]="{'border': usernameCheck ? 'solid' : 'none', 'border-color': usernameCheck ? 'red' : 'none'}">
                 <label for="password">Password</label>
-                <input (click)="onPassword()" [(ngModel)]="password" type="password" id="password">
-                <input (click)="onLogin()" type="submit" id="submit" value="Submit">
+                <input (click)="onPassword()" [(ngModel)]="password" type="password" id="password"
+                    [ngStyle]="{'border': passwordCheck ? 'solid' : 'none', 'border-color': passwordCheck ? 'red' : 'none'}">
+                <input (click)=" onLogin()" type="submit" id="submit" value="Submit">
+                <br />
+                <br />
+                <div class="error">
+                    <div *ngIf="usernameCheck">
+                        <p>
+                            Enter your username.
+                        </p>
+                    </div>
+                    <div *ngIf="passwordCheck">
+                        <p>
+                            Enter your password.
+                        </p>
+                    </div>
+                    <div *ngIf="credCheck">
+                        <p>
+                            Username or Password is incorrect.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
